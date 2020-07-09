@@ -1,0 +1,418 @@
+<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+
+<!-- 
+
+Hello Camper!
+
+For now, the test suite only works in Chrome! Please read the README below in the JS Editor before beginning. Feel free to delete this message once you have read it. Good luck and Happy Coding! 
+
+- The freeCodeCamp Team 
+
+-->
+
+
+<!-- Recreate this documentation page "https://docs.unrealengine.com/en-US/index.html" -->
+<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200&display=swap" rel="stylesheet">
+
+<main id="main-doc">
+  
+  <div class="nav">
+    
+    
+    <nav id="navbar"><header id="unreal_engine_documentation">
+      <h1> Unreal Engine Documentation </h1>
+    </header> 
+    <ul>
+      <li> <a href="#Getting_Started" class="nav-link"> Getting Started </a> </li>
+      <li> <a href="#Editor_Manual" class="nav-link"> Editor Manual </a> </li>
+      <li> <a href="#Engine_Features" class="nav-link"> Engine Features </a> </li>
+      <li> <a href="#Programming_Guide" class="nav-link"> Programming Guide </a> </li>
+      <li> <a href="#Blueprints_Visual_Scripting" class="nav-link"> Blueprints Visual Scripting </a> </li>
+      <li> <a href="#Gameplay_Guide" class="nav-link"> Gameplay Guide </a> </li>
+      <li> <a href="#Samples_and_Tutorials" class="nav-link"> Samples and Tutorials </a> </li>
+      <li> <a href="#Platform_Development" class="nav-link"> Platform Development </a> </li>
+      <li> <a href="#Source" class="nav-link"> Source </a> </li>
+    </ul>
+    </nav>
+      </div>
+    
+   <div class="mainsection">
+  <section class="main-section" id="Getting_Started">
+    
+    <header id="Getting-Started">
+      <h1> Getting Started </h1>
+      
+    </header>
+    <p> <strong>Editor Basics </strong> <br> A Project is a self-contained unit that holds all the content and code that make up an individual game and coincides with a set of directories on your disk. For example, in the image below the Hierarchy Tree of the Content Browser contains the same directory structure found inside your Project folder on your disk. Although a Project is often referenced by the .uproject file associated with it, they are two separate files that exist alongside each other. The .uproject is a reference file used to create, open, or save a file, whereas the Project contains all of the files and folders associated with it.
+
+You can create any number of different Projects which can all be maintained and developed in parallel. Both the Engine (and Editor) can easily switch between them which will allow you to work on multiple games at once or have several test projects in addition to your main game Project.
+
+In Unreal Editor, the scenes in which you create your game experience are generally referred to as Levels . You can think of a level as a 3D environment into which you place a series of objects and geometry to define the world your players will experience. Any object that is placed in your world, be it a light, a mesh, or a character, is considered to be an Actor. Technically speaking, Actor is a programming class used within the Unreal Engine to define an object that has 3D position, rotation, and scale data. For sake of ease, however, it will be easiest to think of an Actor as any object that can be placed in your levels. </p>
+    <p> <strong>Editor Viewports </strong> <br>
+The Viewports are your window into the worlds you create in Unreal. They can be navigated just as you would in a game, or can be used in a more schematic design sense as you would for an architectural blueprint. The Unreal Editor viewports contain a variety of tools and visualizers to help you see exactly the data you need. </p>  
+    <p> <strong>Editor Modes</strong> <br>
+The Modes panel contains a selection of various tool modes for the Editor. These change the primary behavior of the Level Editor for a specialized task, such as placing new assets into the world, creating geometry brushes and volumes, painting on meshes, generating foliage, and sculpting landscapes. </p>
+    <p> <strong>Actors & Geometry </strong><br>
+At its most basic level, creating levels boils down to placing items in a map inside Unreal Editor. These items may be world geometry, decorations in the form of Brushes, Static Meshes, lights, player starts, weapons, or vehicles. Which items are added when is usually defined by the particular workflow used by the level design team. </p>
+    
+  <p> <strong>Content Browser</strong>
+<br>The Content Browser is the primary area of the Unreal Editor for creating, importing, organizing, viewing, and modifying content assets within Unreal Editor. It also provides the ability to manage content folders and perform other useful operations on assets, such as renaming, moving, copying, and viewing references. The Content Browser can search for and interact with all assets in the game.</p>
+    <p><strong>Lighting </strong> <br>
+Lighting your scenes is accomplished using Light Actors that act as light sources and contain properties to determine the characteristics of the light, such as:
+
+How bright the light is
+
+What color the light is
+
+There are also different kinds of lights that emit light in different ways. For example, a standard light bulb emits light in all directions. In Unreal Engine, this is called a point light. In other circumstances, the light emitted is physically limited by making the back of the bulb opaque, such as with a flood light. This would be a spot light. Outdoor lighting from the sun because it is located so far away appears to come more from a direction instead of from a single
+
+  To simulate this type of lighting, a directional light is available. </p>
+    <p><strong>Materials & Shading</strong> <br>
+A Material is an asset that can be applied to a mesh to control the visual look of the scene. At a high level, it is probably easiest to think of a Material as the "paint" that is applied to an object. But even that can be a little misleading, since a Material literally defines the type of surface from which your object appears to be made. You can define its color, how shiny it is, whether you can see through the object, and much more.
+
+In more technical terms, when light from the scene hits the surface, a Material is used to calculate how that light interacts with that surface. These calculations are done using incoming data that is input to the Material from a variety of images (textures) and math expressions, as well as from various property settings inherent to the Material itself.
+
+Unreal Engine 4 utilizes a physically-based shading model. This means that rather than defining a Material using arbitrary properties (such as Diffuse Color and Specular Power), you instead use properties more easily relatable to the real world. These include Base Color, Metallic, Specular, and Roughness. </p>
+    <p><strong>Blueprints Visual Scripting</strong> <br>
+The Blueprints Visual Scripting system in Unreal Engine is a complete gameplay scripting system based on the concept of using a node-based interface to create gameplay elements from within Unreal Editor. As with many common scripting languages, it is used to define object-oriented (OO) classes or objects in the engine. As you use UE4, you'll often find that objects defined using Blueprint are colloquially referred to as just "Blueprints."
+
+This system is extremely flexible and powerful as it provides the ability for designers to use virtually the full range of concepts and tools generally only available to programmers. In addition, Blueprint-specific markup available in Unreal Engine's C++ implementation enables programmers to create baseline systems that can be extended by designers.</p>
+    <p><strong>Programming</strong> <br>
+Implementing gameplay and modifying the engine are essential aspects of any game project. Unreal Engine gives you the ability to implement gameplay through code or visually using Blueprints or even create a plugin that modifies or extends the engine and editor to add completely custom functionality for designers or artists to use. </p>
+    <p><strong>Playtest Your Game</strong> <br>
+Test and debug your levels and gameplay using Unreal Engine's built-in features. Get real-time feedback directly in the editor using Play In Editor mode, and even inspect and manipulate the objects in the game while it is running using Simulate In Editor mode. Make changes to gameplay code, recompile, and update the game during play using Hot Reload. </p>
+     
+       
+    
+  </section>
+  
+  <section class="main-section" id="Editor_Manual">
+    
+    <header id="Editor-Manual">
+      <h1> Editor Manual </h1>
+      
+    </header>
+    <p><strong>Prerequisite Topics</strong> <br>
+This page assumes you have prior knowledge of the following topics. Please read them before proceeding.<br>
+<ul>
+<li>Installing Unreal Engine</li>
+
+<li>Create a New Project</li>
+    </ul>
+      The focus of the Unreal Editor Quick Start Guide is to walk you through the basics of working with Unreal Engine 4.<br>
+
+After going through this tutorial, developers will know the following:<br>
+<ul>
+<li>How to navigate viewports</li>
+
+<li>How to create a new level</li>
+
+<li>How to place and edit actors in levels</li>
+
+<li>How to build and run levels</li>
+
+    </p><p><strong>1. Required Setup</strong><br>
+In the Project Browser, you can create new projects based off several different template types, or open any previously created projects or samples that you have downloaded. Let's create a new project.<br>
+
+After Installing Unreal Engine and launching the Unreal Editor, the Project Browser appears. Under New Project Categories, select a development category. For this quick start, let's create a project from the Games category, then click Next.<br>
+      In the second page of the Project Browser, select the Blank template, then click Next.<br>
+      On the final page of the Project Browser, select the Blueprint and With Starter Content settings, enter a Folder location and Name for your project, then click Create Project.
+    </p><p><strong>2. Navigating the Viewport</strong><br>
+With the project open and ready to go, the first thing you may notice is the Viewport in the center of the Unreal Editor.Inside the Viewport is where you will do most of your level construction. The template project that we selected in the previous step includes a small sample Level and some assets for us to get started with. Using this little area as a point of reference, take a moment to get used to the Viewport Camera Controls by using the most common methods of navigating the Viewport in Unreal Engine <br>
+
+    </p><p> <strong>4.Standard Controls</strong><br>
+These controls represent the default behavior when clicking and dragging in the viewports with no other keys or buttons pressed. These are also the only controls that can be used to navigate the orthographic viewports.<br>
+    </p> <p> <strong>  WASD Fly Controls</strong> <br>
+All of these controls are only valid in a Perspective viewport, and by default you must hold RMB to use the WASD game-style controls.
+    </p><p> <strong>Orbit, Dolly, and Track</strong><br>
+Unreal Editor supports Maya-style pan, orbit, and zoom viewport controls, making it much easier for Maya artists to jump into the tool.</p><p> <br><strong>3. Create a New Level</strong><br>
+Next we will create a new Level that we will use to build our game environment in. While there are several different ways in which you can create a new Level, we will use the File Menu method, which lists level selection options.<br>
+
+Inside the Unreal Editor, click the File Menu option then select New Level....This will open the New Level dialog window:The Default level includes some of the commonly used assets for constructing levels, the VR-Basic level includes some assets for constructing levels with the VR Editor, and Empty Level is a completely blank level with no assets. For the purposes of this guide we are going to start from scratch with a completely blank slate.<br>
+
+Click the Empty Level to select it.<br>
+
+    </p><p><strong>4. Placing Actors in the Level</strong><br>
+In this step, we will begin placing Actors (for example, lights or geometry) into our empty level. We will cover the two most common ways of adding Actors to the level: through Place Mode and through the Content Browser . After completing this step, you will know how to place Actors inside your own levels and can begin manipulating those Actors to create your environment.<br>
+
+In the Modes Panel, with Place Mode enabled, click the Geometry category and select the Box.When you release the Left Mouse Button, the Box is added to the level.In the Details panel (lower-right window of the editor), with the Box still selected, set Location and Rotation all to 0.
+
+<br>Set the Scale to 4 x 4 x 0.1.We will use this as the floor on which the player can walk around.
+
+<br>In the Modes Panel select the Lights tab, then drag-and-drop a Directional Light into the level on top of the floor.On the Translation Tool , click and drag the Z-Axis (blue) on the gizmo up, away from the surface of the floor.If the Directional Light becomes unselected, you can re-select it by Left-clicking on it in the Level Viewport.
+
+<br>In the Modes Panel, select the Visual Effects tab and drag-and-drop an Atmospheric Fog to the level.The Atmospheric Fog Actor will add a basic sky to the level and the level will become illuminated instead of dark.
+
+<br>From the Modes Panel on the Basic tab, drag-and-drop a Player Start into the level.From the Modes Panel on the Volumes tab, drag-and-drop a Lightmass Importance Volume into the level.The Lightmass Importance Volume is used to control and concentrate lighting and shadowing effects within the volume. When placing the Lightmass Importance Volume in the level, the default size of the volume does not cover our playable area, so we will need to scale it up.
+
+<br>Inside the Level Viewport, press R to switch to the Scale Tool .
+
+<br>Click and drag the white box in the center of the Scale Tool so that the Lightmass Importance Volume encapsulates the floor.Inside the Content Browser under Content  StarterContent  Props, drag-and-drop the SM_TableRound into the level.Try to place the table in the center of the floor using the Move Tool (press W if it is not selected).
+
+<br>Also under Content StarterContent  Props, drag-and-drop the SM_Chair into the level.With the SM_Chair selected inside the Level Viewport, press E to access the Rotation Tool .Left-click and drag the blue axis arc (the gizmo will update to show degrees) and rotate the chair to face the table.Using the placement methods above, create a small scene by adding more Actors from the Modes Panel and Content Browser.Try adding some lights, props, walls and a roof, found under the Content StarterContent Architecture folder
+
+    </p><p><br><strong>5. Editing Placed Actors</strong><br>
+With several different Actors placed inside our level, the next step involves Editing Actor Properties that can change the look or the way the Actor functions in the level, giving us a more customized looking level. We will start with editing the properties of our Directional Light Actor then shift our focus to applying Materials to some of the Static Mesh Actors that you have placed in your level.
+
+<br>Once you have finished this step, you will have seen where to access and modify the properties of Actors, so that you can begin editing and experimenting with different settings inside your own levels.
+
+<br>Select the Directional Light Actor by Left-clicking on it in the Viewport.In the Details Panel under the Light category, enable Atmosphere Sun Light:Depending on the rotation of your Directional Light Actor, the sky color will change. If you rotate the Viewport around, you will see that the sun now aligns with the Directional Light Actor. This is a real time process, so you can rotate the Directional Light Actor (press E to switch to Rotation Mode) and the sky will change color from night to sunrise, daytime, and sunset.
+<br>
+Next we will change the Material on one of your placed Static Mesh Actors by first selecting it.
+<br>
+With your Actor selected, in the Details panel under Materials, click the drop-down box under Element 0.In the pop-up window, select the M_Brick_Clay_New Material.All Actors in your level have many properties for you to adjust inside the Details panel. Explore changing their settings!Try changing the Light Color of your lights, applying more Materials or changing the Scale of the Actors in your level.
+    </p>
+      <p><br><strong>6. Running the Build Process</strong><br>
+By now you may have noticed the "Preview" labels in the shadows and the light leaking under walls.This is because all the lights in the scene are static and use precomputed, or baked lighting, which has not been calculated yet. The "Preview" text is there to remind you that what you are seeing in the viewport currently is not what you will see in the game.
+<br>
+In this step, we will go through the Build process which will build all levels (precompute lighting data and visibility data, generate any navigation networks and update all brush models). We will also take a look at Light Quality settings inside of the Build Options, which we can use to adjust the quality of our lighting when it is built.
+<br>
+From the Main Toolbar, click the down-arrow next to the Build option.Under Lighting Quality, choose the Production setting.This will give us the highest quality lighting but is the slowest in terms of computation time and will increase the time it takes to Build the game. Our level is small, so it should not impact us too much, but keep this in mind when you are working on larger levels as you may want to leave it on a mid-low level setting while creating your level and switching it to Production in a "final pass" on your level.
+<br>
+Wait for the Build to complete.You will see the progress in the lower-right corner of the Unreal Editor as seen in the image above. Once the Build process is complete, the level lighting will update to give you a better indication of the final result.From the Main Toolbar, click the Play Button to play in the editor.Using WASD to move and the Mouse to turn the camera, you can fly around your level.
+      <br></p>
+     <p> <strong>7. On Your Own!</strong><br>
+At this point, you should have created a Build of the level lighting and previewed your game with the Play in Editor feature. Each of the steps leading up to this point have been aimed at getting you quickly up to speed on how to perform the most common actions when constructing levels inside the Unreal Editor.
+<br>
+Using the methods that were provided during the course of this guide, try to do the following on your own:Change the lighting of the level to a moonlit, night scene.
+<br>
+Add another room, attached to the first room.On the attached room, try to make it elevated and join them with stairs.
+<br>
+Add some bushes, a couch, shelves and a front door.Add different kinds of lights with different colors.
+<br>
+      Use different Materials on some of your Actors.</p>
+    
+    
+    
+  </section>
+     
+  
+  <section class="main-section" id="Engine_Features">
+    
+    <header id="Engine-Features">
+      <h1> Engine Features </h1>
+      
+    </header>
+    
+    <p><strong>Professional Video I/O</strong> <br> </p>
+    <p>Augmented reality experiences — mixing traditional 2D video with real-time 3D environments — are becoming increasingly in demand for film and broadcast media applications. The pages in this section describe how you can make the Unreal Engine work as a seamless part of your video production pipeline:
+
+Play professional-level video and audio live in the Unreal Engine, composited into the virtual 3D world on the fly.
+
+Apply effects to the imported video directly in the Unreal Engine, like chroma-keying, lens undistortion, color correction, and more.
+
+Synchronize the Unreal Engine with the timecode and frame rate of your input video, to eliminate timing issues.
+
+Render video feeds from the Unreal Editor or from your running game project back out to your studio's video pipeline. </p>
+    <p><strong>
+      Proxy Geometry Tool </strong></p><br>
+<p>
+  The Proxy Geometry tool set was developed as a way to increase your Unreal Engine 4 (UE4) project's performance while keeping the visual quality of your project uneffected. 
+
+The Proxy Geometry Tool is currently only supported on PCs that use Microsoft Windows. Mac and Linux support will be added at a later date.</p>
+    <p>
+      <strong>Replay System</strong><br></p>
+    <p>Unreal Engine 4 (UE4) features a Replay system which can record gameplay for later viewing. This feature is available in all games, from live, multiplayer games played on dedicated servers, to single-player games, and even including Play-In-Editor sessions. At a high level, the Replay system works by using a DemoNetDriver to read data drawn from the built-in replication system, similar to how a NetDriver operates in a live, networked gameplay environment. Even if a project doesn't have a multiplayer mode, any project set up to replicate data is compatible with the Replay System without the need for further modification.
+
+The way this works involves the DemoNetDriver passing network data to a Replay Streamer, which handles the process of filtering and storing the data. When viewing a replay, a DemoNetDriver will have access to all of the replicated information that was available during live play (as well as special data fields designated as relevant only to replays) so that it can reconstruct the events of the game from this data.</p>
+    <p> <strong>Replay System Functionality</strong> <br>
+      The basic functions of the replay system are to start or stop recording a demo, or play back a previously-recorded demo. While in playback mode, the Replay system supports commands to pause, change the playback speed, or jump to a specific point in time. More advanced usage of the system can include adding text tags (usually meta tags or the names of players involved in the game) to a replay, or querying existing replays based on text tags or version information present. The Replay system can be used from C++ code, mainly via the UGameInstance and UWorld classes, or with console commands or command-line arguments. </p>
+    <p> <strong>DemoNetDriver and Streamers </strong> <br>
+      The DemoNetDriver is a specialized network driver that passes replicated data to Streamers, which record the information for later playback. For details on the features of the DemoNetDriver and the Streamers included with the Engine, please see the DemoNetDriver and Streamers page.</p>
+    <p><strong>Backward Compatibility</strong><br>
+    Backward compatibility is supported by the Replay system, starting in version 4.13. This means you can make modifications to a build, such as adding or removing replicated properties, and still load and view replays that were recorded with the original build. In most cases, this is handled automatically, as the Replay system will skip over old replicated fields that have been removed, or use defaults for new replicated fields that have been added. Note that structures with NetSerialize overridden will require these differences in data format to be handled manually. To this end, FArchive now provides the EngineNetVer and GameNetVer functions, which identify the engine and game version, respectively, enabling you to adjust replay data as it comes in so that it fits with your current build. The delegate GetLocalNetworkVersionOverride in FNetworkVersion can be bound to a function that returns a uint32 version number of your choosing. In case exact matches are not required for compatibility, FNetworkVersion has a delegate called IsNetworkCompatibleOverride that can be overridden to perform the comparison between two version numbers and decide if they are compatible.</p>
+    <p> <strong>
+      Rendering and Graphics</strong><br>The rendering system in Unreal Engine 4 is an all-new, DirectX 11 pipeline that includes deferred shading, global illumination, lit translucency, and post processing as well as GPU particle simulation utilizing vector fields.</p>
+    <p><strong>
+      UMG UI Designer</strong><br>
+      Unreal Motion Graphics UI Designer (UMG) is a visual UI authoring tool which can be used to create UI elements such as in-game HUDs, menus or other interface related graphics you wish to present to your users. At the core of UMG are Widgets, which are a series of pre-made functions that can be used to construct your interface (things like buttons, checkboxes, sliders, progress bars, etc.). These Widgets are edited in a specialized Widget Blueprint, which uses two tabs for construction: the Designer tab allows for the visual layout of the interface and basic functions while the Graph tab provides the functionality behind the Widgets used.</p>
+    <p><strong>
+      Skeletal Mesh Animation System</strong><br>
+      The animation system in Unreal Engine 4 (UE4) is comprised of several Animation Tools and Editors which mixes skeletal-based deformation of meshes with morph-based vertex deformation to allow for complex animation. This system can be used to make basic player movement appear much more realistic by playing and blending between canned Animation Sequences, create customized special moves such as scaling ledges and walls using Anim Montages, apply damage effects or facial expressions through Morph Targets, directly control the transformations of bones using Skeletal Controls, or create logic based State Machines that determine which animation a character should use in a given situation. </p>
+    <p> <strong>
+      Chaos Destruction</strong><br>
+      Chaos is Unreal Engine's new high-performance physics and destruction system available to preview in Beta form with the 4.23 release. With Chaos Destruction, users can achieve cinematic-quality visuals in real time in scenes with massive-scale levels of destruction and unprecedented artist control over content creation.</p>
+    <p><strong>
+      Niagara Visual Effects</strong><br>
+      
+The Niagara VFX System is one of two tools you can use to create and adjust visual effects (VFX) inside Unreal Engine 4 (UE4). Before Niagara, the primary way to create and edit visual effects in UE4 was to use Cascade . While Niagara has many of the same of particle manipulation methods that Cascade offers, the way you interact and build visual effects with Niagara is vastly different.
+
+This page links to documentation regarding the Niagara VFX system, including an Overview and a Quick Start guide to get you up and running. If you are new to Niagara, it is recommended that you check out the Getting Started section which includes a high-level overview of the Niagara Editor, the Quick Start Guide, and a page that lays out the Key Concepts and design philosophy behind Niagara. You can also check out the Guides section, which has How-To articles on various tasks. The Reference section has the System and Emitter Module Reference, the Niagara Editor UI Reference, and the Niagara Script Editor UI Reference.</p>
+    <p> <strong>
+      Audio and Sound </strong> <br>
+      Sound is immensely important to creating believable and immersive environments. From ambient sounds in the level, to interactive sounds from vehicles or weapons, to spoken dialog from the characters, the audio in the game can make or break the user's experience. Making the audio in the game actually sound like it should sound can be a difficult task. Unreal Engine 4's audio system provides tools and features to mold the sounds in the game to give them the desired feel. This is important because it means that a clean version of the sound can be produced once in an external application, imported, and then crafted within the engine to create the appropriate result. </p>
+    <p> <strong>Physics Simulation</strong>
+      Unreal Engine 4 uses the PhysX 3.3 physics engine to drive its physical simulation calculations and perform all collision calculations. PhysX provides the ability to perform accurate collision detection as well as simulate physical interactions between objects within the world. Having physics in your game will help improve the immersion value of every scene, as it helps players believe that they are interacting with the scene and that the scene is responding back in some way or another. </p>
+  </section>
+  
+  <section class="main-section" id="Programming_Guide">
+    
+    <header id="Programming-Guide">
+      <h1> Programming Guide </h1>
+      
+    </header>
+    
+    <p> <strong>Programming Guide</strong><br>Unreal Engine 4 provides two toolsets for programmers which can also be used in tandem to accelerate development workflows. New gameplay classes, Slate and Canvas user interface elements, and editor functionality can be written with C++, and all changes will be reflected in Unreal Editor after compiling with either Visual Studio or XCode. The Blueprints visual scripting system is a robust tool which enables classes to be created in-editor through wiring together function blocks and property references.
+
+C++ classes can be used as a base for Blueprint classes, and in this way programmers can set up fundamental gameplay classes that are then sub-classed and iterated on by level designers.</p>
+    <p> <strong>Introduction to C++ Programming in UE4</strong> <br>
+    This guide is about learning how to write C++ code in Unreal Engine 4 (UE4). Don't worry, C++ programming in Unreal Engine is fun, and actually not hard to get started with! We like to think of Unreal C++ as "assisted C++", because we have so many features to help make C++ easier for everyone.
+
+Before we go on, it's really important that you are already familiar with C++ or another programming language. This page is written with the assumption that you have some C++ experience, but if you know C#, Java, or JavaScript, you should find many aspects familiar.
+
+If you are coming in with no programming experience at all, we have you covered also! Check out our Blueprint Visual Scripting guide and you will be on your way. You can create entire games using Blueprint scripting!
+
+It is possible to write standard C++ code in UE4, but you will be most successful after reading through this guide and learning the basics about the Unreal programming model. We will talk more about that as we go along.</p>
+    
+    <p><strong>C++ and Blueprint</strong> <br>
+      UE4 provides two methods, C++ and Blueprint Visual Scripting, to create new gameplay elements. Using C++, programmers add the base gameplay systems that designers can then build upon or with to create the custom gameplay for a level or the game. In these cases, the C++ programmer works in a text editor (like Notepad++) or an IDE (usually Microsoft Visual Studio, or Apple's Xcode) and the designer works in the Blueprint Editor within UE4.
+
+The gameplay API and framework classes are available to both of these systems, which can be used separately, but show their true power when used in conjunction to complement each other. What does that really mean, though? It means that the engine works best when programmers are creating gameplay building blocks in C++ and designers take those blocks and make interesting gameplay.
+
+With that said, let us take a look at a typical workflow for the C++ programmer that is creating building blocks for the designer. In this case, we are going to create a class that is later extended via Blueprints by a designer or programmer. In this class, we are going to create some properties that the designer can set and we are going to derive new values from those properties. The whole process is very easy to do using the tools and C++ macros we provide for you. </p>
+    <p><strong>Class Wizard</strong><br>
+      The first thing we're going to do is use the Class Wizard within the Editor to generate the basic C++ class that will be extended by Blueprint later.The second step in the process tells the wizard the name of the class you want generated. Here's the second step with the default name used.Once you choose to create the class, the wizard will generate the files and open your development environment so that you can start editing it. Here is the class definition that is generated for you. </p>
+    <code> #include "GameFramework/Actor.h"
+#include "MyActor.generated.h"
+
+UCLASS()
+class AMyActor : public AActor
+{
+    GENERATED_BODY()
+
+public:
+    // Sets default values for this actor's properties
+    AMyActor();
+
+    // Called every frame
+    virtual void Tick( float DeltaSeconds ) override;
+
+protected:
+    // Called when the game starts or when spawned
+    virtual void BeginPlay() override;
+      }; </code>
+    <br><p>The Class Wizard generates your class with BeginPlay and Tick specified as overloads. BeginPlay is an event that lets you know the Actor has entered the game in a playable state. This is a good place to initiate gameplay logic for your class. Tick is called once per frame with the amount of elapsed time since the last call passed in. You can do any recurring logic there. However, if you do not need that functionality, it is best to remove it to save yourself a small amount of performance. If you remove it, make sure to remove the line in the constructor that indicated ticking should occur. The constructor below contains the line in question.</p>
+    <code>AMyActor::AMyActor()
+
+{
+
+    // Set this actor to call Tick() every frame.  You can turn this off to improve performance if you do not need it.
+
+    PrimaryActorTick.bCanEverTick = true;
+
+      }</code>
+    <p><strong>Making a Property Show up in the Editor</strong><br>
+      We have our class, so now we can create some properties that designers can set in the Editor. Exposing a property to the Editor is easy with the UPROPERTY Specifier. All you have to do is put UPROPERTY(EditAnywhere) on the line above your property declaration, as seen in the class below. </p>
+    <code>UCLASS()
+class AMyActor : public AActor
+{
+    GENERATED_BODY()
+public:
+
+    UPROPERTY(EditAnywhere)
+    int32 TotalDamage;
+
+    ...
+      };</code>
+    <p>
+      That is all you need to do to be able to edit that value in the Editor. There are more ways to control how and where it is edited. This is done by passing more information into the UPROPERTY() Specifier. For instance, if you want the TotalDamage property to appear in a section with related properties, you can use the categorization feature. The property declaration below shows this.</p>
+    <code>UPROPERTY(EditAnywhere, Category="Damage")
+      int32 TotalDamage;</code>
+    <p>When the user looks to edit this property, it now appears under the Damage heading along with any other properties that you have marked with this category name. This is a great way to place commonly used settings together for editing by designers.
+
+      Now let's expose that same property to Blueprint.</p>
+    <code>UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Damage")
+      int32 TotalDamage;</code>
+    <p>
+      As you can see, there is a Specifier to make a property available for reading and writing in Blueprint graphs. There's a separate Specifier, BlueprintReadOnly, that you can use if you want the property to be treated as const in Blueprints. There are quite a few options available for controlling how a property is exposed to the Editor. To see more options, follow this link.
+
+Before continuing to the section below, let's add a couple of properties to this sample class. There is already a property to control the total amount of damage this actor will deal out, but let us take that further and make that damage happen over time. The code below adds one designer settable property and one that is visible to the designer but not changeable by them. </p>
+    <code>UCLASS()
+class AMyActor : public AActor
+{
+    GENERATED_BODY()
+public:
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Damage")
+    int32 TotalDamage;
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Damage")
+    float DamageTimeInSeconds;
+
+    UPROPERTY(BlueprintReadOnly, VisibleAnywhere, Transient, Category="Damage")
+    float DamagePerSecond;
+
+    ...
+      };</code>
+    <p>DamageTimeInSeconds is a property the designer can modify. The DamagePerSecond property is a calculated value using the designer's settings (see the next section). The VisibleAnywhere Specifier marks that property as viewable but not editable. The Transient Specifier means that it won't be saved or loaded from disk; it is meant to be a derived, non-persistent value, so there is no need to store it. The image below shows the properties as part of the class defaults.</p>
+    
+    
+  </section>
+  
+  <section class="main-section" id="Blueprints_Visual_Scripting">
+    
+    <header id="Blueprints-Visual-Scripting">
+      <h1> Blueprints Visual Scripting </h1>
+      
+    </header>
+    <p><strong>
+      Blueprints Visual Scripting</strong><br>
+      The Blueprints Visual Scripting system in Unreal Engine is a complete gameplay scripting system based on the concept of using a node-based interface to create gameplay elements from within Unreal Editor. As with many common scripting languages, it is used to define object-oriented (OO) classes or objects in the engine. As you use UE4, you'll often find that objects defined using Blueprint are colloquially referred to as just "Blueprints."
+
+This system is extremely flexible and powerful as it provides the ability for designers to use virtually the full range of concepts and tools generally only available to programmers. In addition, Blueprint-specific markup available in Unreal Engine's C++ implementation enables programmers to create baseline systems that can be extended by designers.</p>
+    
+    
+  </section>
+  
+  <section class="main-section" id="Gameplay_Guide">
+    
+    <header id="Gameplay-Guide">
+      <h1> Gameplay Guide </h1> 
+      
+    </header>
+    
+    <p><strong>Gameplay Guide</strong>
+      These pages will introduce you to key Unreal terms. To add new types of gameplay objects, you will generally create a new class. A class is a template, or collection of rules, for your new object, so that you can create as many copies as you need, each containing properties and behavior that you set in the template.</p>
+    
+  </section>
+  
+  <section class="main-section" id="Samples_and_Tutorials">
+    
+    <header id="Samples-and-Tutorials">
+      <h1> Samples and Tutorials </h1>
+      
+    </header>
+    <p><strong>Samples and Tutorials</strong><br>
+      To help you more quickly understand the various ways you can use Unreal Engine 4 and the assets that can be created with it, we have assembled a collection of learning resources for you to download, play with, and deconstruct.</p>
+    
+    
+  </section>
+ 
+<section class="main-section" id="Platform_Development">
+    
+    <header id="Platform-Development">
+      <h1> Platform Development </h1>
+      
+    </header>
+  <p> <strong>Platform Development</strong><br>
+    Information over developing for platforms other than PC.</p>
+    
+    
+  </section>
+  
+  
+  <section class="main-section" id="Source">
+    
+    <header id="source">
+      <h1> Source </h1>
+      </header> <p>All the documentation in this page is taken from <a href="https://docs.unrealengine.com/en-US/index.html"> Unreal</a></p>
+   
+    
+    
+    
+  </section>
+    </div>
+  
+  
+  
+</main>
